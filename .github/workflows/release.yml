@@ -32,7 +32,7 @@ jobs:
           pip install dist/*.whl
           keepstack --version
           python -c "import importlib.resources as r; k = r.files('keepstack'); assert all(k.joinpath(f).is_file() for f in ('Dockerfile', 'compat.json', 'fidelity.json', 'dashboard.html'))"
-      - uses: actions/upload-artifact@v4
+      - uses: actions/upload-artifact@v7
         with:
           name: dist
           path: dist/

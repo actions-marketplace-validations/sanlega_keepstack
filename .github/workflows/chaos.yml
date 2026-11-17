@@ -30,7 +30,7 @@ jobs:
         env:
           ITERATIONS: ${{ inputs.iterations || '9' }}
         run: python scripts/chaos.py --iterations "$ITERATIONS" --report chaos-report.json
-      - uses: actions/upload-artifact@v4
+      - uses: actions/upload-artifact@v7
         if: always()
         with:
           name: chaos-report
